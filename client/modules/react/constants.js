@@ -1,0 +1,2 @@
+export const REACT_REQUEST = 'REACT_REQUEST'
+export const REACT_RECEIEVE = 'REACT_RECEIEVE'

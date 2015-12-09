@@ -1,0 +1,27 @@
+#react-page {
+	h4, p {
+		padding: 0 0.75rem;
+	}
+
+	p {
+		color: #666;
+	}
+
+    h4 {
+        span.loading {
+            font-size: 14px;
+            padding-left: 10px;
+        }
+    }
+
+	.tabs .tab {
+    position: relative;
+    .indicator {
+    	width: 100%;
+    	display: none;
+    }
+    .active + .indicator {
+    	display: block;
+    }
+  }
+}

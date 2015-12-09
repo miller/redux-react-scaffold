@@ -1,0 +1,2 @@
+export const REQUEST_REDUX = 'REQUEST_REDUX'
+export const RECEIEVE_REDUX = 'RECEIEVE_REDUX'
