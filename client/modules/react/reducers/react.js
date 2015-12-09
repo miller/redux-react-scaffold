@@ -12,7 +12,7 @@ export default function reactReducer(state = {
 		case ActionTypes.REACT_RECEIEVE:
 			state = Object.assign({}, state, {
 				isFetching: false,
-				data: action.data
+				data: action.payload
 			})
 			return state
 		default:

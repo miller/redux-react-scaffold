@@ -11,7 +11,7 @@ export default function reduxReducer(state = {
 		case RECEIEVE_REDUX:
 			return Object.assign({}, state, {
 				isFetching: false,
-				...action.data
+				...action.payload
 			})
 		default:
 			return state

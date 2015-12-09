@@ -11,7 +11,7 @@ export default function materialCSSReducer(state = {
 		case RECEIEVE_MATERIALCSS:
 			return Object.assign({}, state, {
 				isFetching: false,
-				...action.data
+				...action.payload
 			})
 		default:
 			return state

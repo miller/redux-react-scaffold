@@ -10,7 +10,9 @@ function fetchMaterialCSS() {
 function receieveMaterialCSS(data) {
 	return {
 		type: RECEIEVE_MATERIALCSS,
-		data
+		payload: {
+			...data
+		}
 	}
 }
 

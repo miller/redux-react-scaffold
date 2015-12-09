@@ -11,7 +11,9 @@ function fetchReact() {
 function receieveReact(data) {
 	return {
 		type: REACT_RECEIEVE,
-		data
+		payload: {
+      ...data
+    }
 	}
 }
 

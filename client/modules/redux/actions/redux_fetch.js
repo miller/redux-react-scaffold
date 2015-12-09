@@ -10,7 +10,9 @@ function fetchRedux() {
 function receieveRedux(data) {
 	return {
 		type: RECEIEVE_REDUX,
-		data
+		payload: {
+			...data
+		}
 	}
 }
 
