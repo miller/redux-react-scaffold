@@ -1,21 +1,9 @@
 import { REACT_REQUEST, REACT_RECEIEVE } from '../constants'
+import { createAction } from 'redux-actions';
 import reactJSON from '../../../mocks/react.json'
 
-// mock async data request
-function fetchReact() {
-	return {
-		type: REACT_REQUEST
-	}
-}
-
-function receieveReact(data) {
-	return {
-		type: REACT_RECEIEVE,
-		payload: {
-      ...data
-    }
-	}
-}
+const fetchReact = createAction(REACT_REQUEST)
+const receieveReact = createAction(REACT_RECEIEVE)
 
 export default function loadReact() {
   return (dispatch, getState) => {

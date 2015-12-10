@@ -1,19 +1,14 @@
 import { REQUEST_MATERIALCSS, RECEIEVE_MATERIALCSS } from '../constants'
+import { handleActions } from 'redux-actions'
 
-export default function materialCSSReducer(state = {
-	isFetching: true
-}, action) {
-	switch(action.type) {
-		case REQUEST_MATERIALCSS:
-			return Object.assign({}, state, {
-				isFetching: true
-			});
-		case RECEIEVE_MATERIALCSS:
-			return Object.assign({}, state, {
-				isFetching: false,
-				...action.payload
-			})
-		default:
-			return state
-	}
-}
+const materialCSSReducer = handleActions({
+	REQUEST_MATERIALCSS: (state, action) => Object.assign({}, state, {
+		isFetching: true
+	}),
+	RECEIEVE_MATERIALCSS: (state, action) => Object.assign({}, state, {
+		isFetching: false,
+		...action.payload
+	})
+}, { isFetching: true })
+
+export default materialCSSReducer

@@ -1,20 +1,9 @@
 import { REQUEST_REDUX, RECEIEVE_REDUX } from '../constants'
+import { createAction } from 'redux-actions';
 import reduxJSON from '../../../mocks/redux.json'
 
-function fetchRedux() {
-	return {
-		type: REQUEST_REDUX
-	}
-}
-
-function receieveRedux(data) {
-	return {
-		type: RECEIEVE_REDUX,
-		payload: {
-			...data
-		}
-	}
-}
+const fetchRedux = createAction(REQUEST_REDUX)
+const receieveRedux = createAction(RECEIEVE_REDUX)
 
 export default function loadRedux() {
 	return (dispatch, getState) => {

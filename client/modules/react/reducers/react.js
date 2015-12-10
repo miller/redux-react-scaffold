@@ -1,21 +1,17 @@
-import * as ActionTypes from '../constants'
+import { REACT_REQUEST, REACT_RECEIEVE } from '../constants'
+import { handleActions } from 'redux-actions';
 
-export default function reactReducer(state = {
+const reactReducer = handleActions({
+	REACT_REQUEST: (state, action) => Object.assign({}, state, {
+		isFetching: true
+	}),
+	REACT_RECEIEVE: (state, action) => Object.assign({}, state, {
+		isFetching: false,
+		data: action.payload
+	})
+},
+{
 	isFetching: true
-}, action) {
-	switch (action.type) {
-		case ActionTypes.REACT_REQUEST:
-			state = Object.assign({}, state, {
-				isFetching: true
-			})
-			return state
-		case ActionTypes.REACT_RECEIEVE:
-			state = Object.assign({}, state, {
-				isFetching: false,
-				data: action.payload
-			})
-			return state
-		default:
-			return state
-	}
-}
+})
+
+export default reactReducer
